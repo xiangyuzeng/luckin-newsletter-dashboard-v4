@@ -1,6 +1,5 @@
-// Luckin Newsletter Dashboard Data v5 — Fresh Research Apr 2026
-// NO 瑞幸财务 tab — product/market focused
-// BI-WEEKLY: Update META, KEY_METRICS, NEW_PRODUCTS, TIMELINE
+// Luckin Newsletter Dashboard v6 — Strategy-Focused
+// Rebuilt to center strategic recommendations with full report content
 
 export const META = {
   title: 'Luckin 美国饮品市场 Newsletter',
@@ -10,9 +9,9 @@ export const META = {
 };
 
 export const EXEC_SIGNALS = [
-  { title: '三大功能架构同时爆发', detail: 'Starbucks推出Energy Refreshers永久平台+22g蛋白RTD，Dunkin发布Zero能量饮+蛋白奶平台，PepsiCo CEO宣称「纤维将是下一个蛋白质」——功能化不可逆转。', source: 'Starbucks/Dunkin官方, CNBC' },
-  { title: '冷泡沫+能量成为产品创新核心平台', detail: '冷泡沫正在取代糖浆成为主要客制化载体（SBUX/DK本季各推4+种风味泡沫）。能量升级成为永久菜单架构——每家主流咖啡链现在直接与Monster和Celsius竞争。', source: 'Starbucks IR, Dunkin Newsroom' },
-  { title: '市场格局加速碎片化=瑞幸窗口', detail: 'SBUX关627店+DK成NYC第一+Dutch Bros AUV$210万超SBUX+蜜雪冰城$1.19入场+10%通用关税。双巨头份额5年降8ppt(85.9%→77.9%)，中型连锁+6.8ppt。', source: 'Placer.ai, SBUX 10-K, Reuters' },
+  { title: '三大功能架构同时爆发', detail: 'SBUX推出Energy Refreshers永久平台+22g蛋白RTD，DK发布Zero能量饮+蛋白奶平台，PepsiCo CEO宣称「纤维将是下一个蛋白质」。', source: 'Starbucks/Dunkin官方, CNBC', color: '#0365C0' },
+  { title: '冷泡沫+能量=产品创新核心平台', detail: '冷泡沫取代糖浆成客制化核心（SBUX/DK各推4+种）。能量升级成永久菜单——每家主流咖啡链现直接与Monster/Celsius竞争。', source: 'Starbucks IR, Dunkin Newsroom', color: '#00A5A5' },
+  { title: '市场碎片化=瑞幸历史窗口', detail: 'SBUX关627店+DK成NYC#1+Dutch Bros AUV$210万超SBUX+蜜雪$1.19入场+10%关税。双巨头份额5年降8ppt。', source: 'Placer.ai, SBUX 10-K', color: '#DC2626' },
 ];
 
 export const MARKET_SHARE = [
@@ -25,142 +24,105 @@ export const MARKET_SHARE = [
 ];
 
 export const KEY_METRICS = [
-  { label: '每日咖啡饮用率', value: '66%', sub: '美国成年人(20年新高)', trend: 'up', delta: '精品渗透46%', src: 'NCA 2025' },
-  { label: '冷咖啡消费占比', value: '31%', sub: '所有咖啡消费', trend: 'up', delta: '+23% YoY', src: 'NCA' },
-  { label: '得来速购买占比', value: '59%', sub: '外出咖啡(历史新高)', trend: 'up', delta: 'APP下单36%(+6%)', src: 'NCA' },
-  { label: '阿拉比卡期货', value: '$2.90', sub: '/磅(4月)', trend: 'down', delta: '从$4.41跌34%', src: 'Trading Econ' },
-  { label: '功能饮品市场', value: '$518亿', sub: '2025年', trend: 'up', delta: 'CAGR 6.68%', src: 'Precedence' },
-  { label: 'SBUX关闭门店', value: '627家', sub: 'FY25北美', trend: 'down', delta: '+80-90取餐店', src: 'SBUX 10-K' },
-  { label: '双巨头份额', value: '77.9%', sub: 'SBUX+DK', trend: 'down', delta: '5年降8ppt', src: 'Placer.ai' },
-  { label: '10%通用关税', value: '4月5日', sub: '所有进口含咖啡', trend: 'down', delta: '越南46%', src: 'White House' },
+  { label: '每日咖啡饮用率', value: '66%', sub: '美国成年人', trend: 'up', delta: '精品46%', src: 'NCA' },
+  { label: '冷咖啡占比', value: '31%', sub: '+23% YoY', trend: 'up', delta: 'DT 59%', src: 'NCA' },
+  { label: '阿拉比卡', value: '$2.90', sub: '/磅', trend: 'down', delta: '从$4.41跌34%', src: 'TE' },
+  { label: '功能饮品', value: '$518亿', sub: 'CAGR 6.68%', trend: 'up', delta: '→$990亿', src: 'Prec' },
+  { label: 'SBUX关店', value: '627家', sub: 'FY25北美', trend: 'down', delta: '+80-90取餐', src: '10-K' },
+  { label: '双巨头份额', value: '77.9%', sub: '-8ppt(5年)', trend: 'down', delta: '空间释放', src: 'Plac' },
+  { label: '10%关税', value: '4月5日', sub: '所有进口', trend: 'down', delta: '越南46%', src: 'WH' },
+  { label: '蛋白搜索', value: '+30.9%', sub: 'YoY', trend: 'up', delta: '80%优先蛋白', src: 'Spate' },
 ];
 
-export const DASHBOARD_ROWS = [
-  { cat: '市场', m: '咖啡店行业', d: '$3,430亿/年', c: '66%日饮率(20年高)', impact: 'pos', s: 'NCA/IBISWorld' },
-  { cat: '市场', m: '功能饮品', d: '$518亿(2025)', c: 'CAGR 6.68%→$990亿', impact: 'pos', s: 'Precedence' },
-  { cat: '市场', m: 'RTD咖啡', d: '$54-83亿', c: 'CAGR 5%+', impact: 'pos', s: 'Mordor' },
-  { cat: '市场', m: '益生元汽水', d: '~$4.4亿(2024)', c: '+301.5%(2023),→$20亿(2029)', impact: 'pos', s: 'Coca-Cola预测' },
-  { cat: '消费者', m: '冷咖啡占比', d: '31%消费量', c: '+23% YoY, 冷萃+50%', impact: 'pos', s: 'NCA' },
-  { cat: '消费者', m: 'DT购买占比', d: '59%(历史新高)', c: 'APP下单36%(+6%)', impact: 'pos', s: 'NCA' },
-  { cat: '消费者', m: 'Z世代功能饮品', d: '80%至少每两周', c: '72%每月尝新', impact: 'pos', s: 'EY' },
-  { cat: '趋势', m: '蛋白咖啡搜索', d: '+30.9% YoY', c: '80%美国人优先蛋白', impact: 'pos', s: 'Spate/IFIC' },
-  { cat: '趋势', m: '抹茶菜单', d: '+30.2% YoY', c: '社交+107%,Yelp #1', impact: 'pos', s: 'Tastewise' },
-  { cat: '趋势', m: '爆炸珠市场', d: '$37.7亿(全球)', c: 'CAGR 11.1%', impact: 'pos', s: 'BRI' },
-  { cat: '供应链', m: '阿拉比卡', d: '$2.88-2.93/磅', c: '从$4.41跌34%', impact: 'pos', s: 'Trading Econ' },
-  { cat: '供应链', m: '10%通用关税', d: '4月5日生效', c: '越南46%,中国杯35-41.5%', impact: 'neg', s: 'White House' },
-  { cat: '竞争', m: 'SBUX Q1 FY26', d: '+4%同店/+3%交易', c: '但关627店,利润率11.9%', impact: 'neg', s: 'SBUX Q1' },
-  { cat: '竞争', m: 'DK成NYC第一', d: '13,700家美国', c: 'Inspire探索$200亿IPO', impact: 'neg', s: 'Tracxn' },
-  { cat: '竞争', m: 'Dutch Bros AUV', d: '$210万(超SBUX)', c: '$16.4亿营收(+28%)', impact: 'neg', s: 'BROS 10-K' },
-  { cat: '竞争', m: '7 Brew爆发', d: '600+店(38州)', c: '系统销售865%增长', impact: 'neg', s: 'Franchise Times' },
-  { cat: '竞争', m: '中国品牌进入', d: '蜜雪50000+/霸王6440+', c: '蜜雪$1.19冲击', impact: 'neg', s: 'NRN/KrASIA' },
-  { cat: '并购', m: 'KDP+JDE $180亿', d: '4月初交割', c: '全球最大纯咖啡公司', impact: 'neg', s: 'SEC/Bev Daily' },
-  { cat: '并购', m: 'Luckin收购BB', d: '$4亿(3月4日)', c: '独有双品牌优势', impact: 'pos', s: 'Sprudge' },
+// === STRATEGIC CONTENT (from docx) ===
+
+export const PRICING_STRATEGY = {
+  tiers: [
+    { name: '基础款', price: '$1.99', items: '美式/冷萃/冰美式', goal: '拉新获客', benchmark: 'McDonald $1, DK $2/$3菜单' },
+    { name: '主力款', price: '$2.99', items: '拿铁/生椰系列/冰拿铁', goal: '复购+品牌认知', benchmark: 'DK $4.68, SBUX $5.13' },
+    { name: '功能款', price: '$3.99', items: '蛋白/抹茶/能量升级', goal: '提升客单价', benchmark: 'SBUX RTD $3.99, BB $7.50' },
+  ],
+  insight: '咖啡需求弹性极低(-0.26)，10%涨价仅减2.6%销量。$3-5为习惯购买甜蜜区。瑞幸$2-3定价处于市场最低端，极强获客力。',
+};
+
+export const PROTEIN_COMPARE = [
+  { brand: 'Starbucks RTD', product: 'Coffee & Protein', protein: '22g', sugar: '2g', fiber: '5g益生元', price: '$3.99/瓶', format: '即饮RTD' },
+  { brand: "Dunkin'", product: '蛋白奶平台', protein: '15g/杯', sugar: '未披露', fiber: '—', price: '门店加入', format: '现制可选' },
+  { brand: 'Tim Hortons', product: '蛋白拿铁/Quenchers', protein: '11-23g', sugar: '低', fiber: '—', price: '门店', format: '现制' },
+  { brand: 'Bolthouse MAX', product: 'MAX Protein', protein: '38g', sugar: '低', fiber: '—', price: '零售', format: '12oz瓶' },
+  { brand: 'Silk (达能)', product: '高蛋白植物奶', protein: '行业最高', sugar: '减半', fiber: '+纤维', price: '零售', format: '乳品' },
+  { brand: '瑞幸(建议)', product: '蛋白生椰拿铁', protein: '15-20g', sugar: '可调', fiber: '可选+$0.30', price: '$3.49-3.99', format: '现制+APP定制' },
 ];
 
-export const PRICING = [
-  { brand: 'Blue Bottle', latte: 7.50, color: '#6366F1', note: '精品手冲' },
-  { brand: 'Starbucks', latte: 5.13, color: '#00704A', note: '利润率降至11.9%' },
-  { brand: 'Dutch Bros', latte: 4.88, color: '#1E40AF', note: 'AUV$210万超SBUX' },
-  { brand: 'Blank St.', latte: 4.35, color: '#111827', note: '估值$5→10亿' },
-  { brand: "Dunkin'", latte: 4.44, color: '#FF6600', note: 'NYC第一大咖啡链' },
-  { brand: 'Luckin', latte: 2.50, color: '#0365C0', note: '$0.99新用户' },
-  { brand: "McDonald's", latte: 1.00, color: '#FFC72C', note: '任意杯$1' },
+export const ENERGY_COMPARE = [
+  { dim: '咖啡因', sbux: '125mg(天然+B族)', dk: '145mg(瓜拉纳)', luckin: '可APP定制调节' },
+  { dim: '定价', sbux: '+$0.80加费升级', dk: '$2.99-3.49独立', luckin: '+$0.30-0.50(低于竞品)' },
+  { dim: '糖含量', sbux: '可选含糖/无糖', dk: '零糖20卡', luckin: '多糖度选择(APP)' },
+  { dim: '口味', sbux: '3种基底', dk: '6种口味', luckin: 'APP无限组合' },
+  { dim: '渠道', sbux: '门店现制', dk: '门店+零售', luckin: '门店+外卖' },
+  { dim: '差异化', sbux: '永久平台(双向调节)', dk: '独立品类(零糖)', luckin: 'APP咖啡因可调=独特优势' },
 ];
 
-export const COMPETITORS = [
-  { n: 'Starbucks', s: '16,911', t: '$9.34', f: '咖啡厅+DT', fn: '蛋白RTD(22g)+Energy Refreshers(125mg)', dg: '35.5M会员(~60%收入),Deep Brew AI', th: 5, move: 'Q1$99亿(+6%),同店+4%但利润率11.9%.关627店+80-90取餐.翻新1000店+25K座.Rewards三级改版引反弹.中国JV Boyu Capital' },
-  { n: "Dunkin'", s: '~13,700', t: '$4.68', f: 'NextGen DT', fn: '蛋白奶(15g)+Zero能量(145mg)', dg: 'Tango 30秒预测,DK Rewards', th: 4, move: 'NYC第一.4/29 OREO全联名+Dirty Soda+Cherry Daydream.Sabrina 127亿曝光.Inspire探索$200亿IPO' },
-  { n: 'Dutch Bros', s: '~1,136', t: '$8.44', f: 'DT+Walk-thru', fn: 'Blue Rebel能量(24%销售)', dg: '1500万会员,73%交易', th: 3, move: '$16.4亿营收(+28%),AUV$210万.USC Walk-thru=系统最佳.投资$170→$130万.收购Clutch 20店.食物300店推全国' },
-  { n: '7 Brew', s: '600+(38州)', t: '~$5', f: '纯DT模块(500-700sqft)', fn: '首款RTD', dg: '低', th: 3, move: '系统销售$52M→$502M(865%).AUV$204万/$250万(公司).RTD进Walmart.大学校园店.#1 Fast&Serious' },
-  { n: 'Blank St.', s: '~90-97', t: '~$4.50', f: '微型→大店转型', fn: '抹茶核心', dg: '中等', th: 2, move: '$5亿估值,融$1亿+目标$10亿.LA Beverly Hills 6月.费城Penn夏季.品牌化Coffee&Matcha Shop' },
-  { n: 'Luckin', s: '10美/31048全球', t: '$2-3', f: '步行+APP', fn: '待开发', dg: '99%+移动(中国)', th: 0, move: 'BB$4亿收购(3/4交割).中国:$5万/店,93%存活,RF选址90%准确.FY25营收RMB493亿(+43%)' },
+export const PRODUCT_PIPELINE = [
+  { category: '蛋白质系列', skus: ['蛋白质生椰拿铁(15-20g)', '蛋白质陨石拿铁', '高纤维冷萃(+5g益生元)'], price: '$3.49-3.99', timeline: 'Q3 2026', priority: '极高', benchmark: 'SBUX 22g/$3.99, DK 15g' },
+  { category: '能量升级', skus: ['任何饮品+「能量加强」(100-150mg)', '咖啡因可调(标准/加强/去咖啡因)'], price: '+$0.30-0.50', timeline: 'Q3 2026', priority: '极高', benchmark: 'SBUX +$0.80, DK $2.99' },
+  { category: '抹茶产品线', skus: ['纯抹茶拿铁', '草莓/桂花抹茶', '抹茶+蛋白/胶原蛋白'], price: '$2.50→$3.00→$3.99', timeline: 'Q3 2026', priority: '高', benchmark: 'SBUX $5+, Blank St品牌化' },
+  { category: '冷泡沫平台', skus: ['生椰冷泡沫', '桂花冷泡沫', '芒果冷泡沫', '抹茶冷泡沫'], price: '+$0.50-0.80', timeline: 'Q3 2026', priority: '高', benchmark: 'SBUX/DK各4+种泡沫' },
+  { category: '亚洲风味矩阵', skus: ['桂花拿铁', '荔枝冰茶', '白桃乌龙', '生椰升级系列'], price: '$2.99-3.50', timeline: 'Q3 2026', priority: '中', benchmark: 'SBUX ube主题,DK香蕉系列' },
+  { category: 'Blue Bottle RTD', skus: ['BB品牌高端冷萃RTD', 'BB蛋白质RTD', 'BB抹茶RTD'], price: '$4-5/罐', timeline: 'Q4 2026', priority: '高', benchmark: 'SBUX占RTD 39%, 7Brew$2.98' },
+];
+
+export const STORE_STRATEGY = {
+  formats: [
+    { type: '城市核心(步行式)', size: '350-400sqft', invest: '~$5万', target: '曼哈顿/大学城', benchmark: 'Blank St 14家全1月盈利,中国93%存活', priority: '立即', opportunity: 'SBUX关627家+80-90取餐店=空白填充' },
+    { type: '郊区(得来速窗口)', size: '500-700sqft', invest: '$60-150万', target: '郊区/二线城市', benchmark: '7Brew $204万AUV,$4604/sqft', priority: '中期', opportunity: 'DT占59%外出咖啡(历史新高)' },
+    { type: '校园(超小型)', size: '165-200sqft', invest: '最低', target: '大学校园', benchmark: '7Brew大学校园店,Blank St Penn', priority: '中期', opportunity: 'Z世代47%每日饮咖啡,15岁开始' },
+  ],
+  siteSelection: 'Placer.ai移动数据($200-500/月)替代人工估算.对标Dutch Bros手机位置分析.复制中国「外卖先验证→开店」方法论.',
+};
+
+export const SOCIAL_STRATEGY = {
+  budget: '$50-100K/月',
+  channels: [
+    { platform: 'TikTok', action: '「瑞幸隐藏菜单」挑战+Cloud Coffee内容', data: '64% Z世代用TikTok搜索', roi: 'SBUX雇2名全职TikTok创作者' },
+    { platform: '微网红(1-10万)', action: 'NYC/LA本地KOL合作,UGC$2拿铁对比内容', data: 'CPM仅$119,互动6.15%', roi: '$5.78/$1 ROI(11x传统数字广告)' },
+    { platform: 'Instagram', action: '视觉冲击冷泡沫分层照片,ube紫色系', data: 'DK Sabrina 3240万IG浏览', roi: '127亿媒体曝光(DK案例)' },
+  ],
+  tiktokTrends: ['Cloud Coffee(椰子水+浓缩)', 'ube紫薯拿铁', '开心果咖啡(迪拜巧克力延伸)', '蘑菇/适应原咖啡(+4.2x)', '32oz冰咖啡桶'],
+};
+
+export const COMPETITORS_COMPACT = [
+  { n: 'Starbucks', s: '16,911', auv: '$181万', move: 'Q1$99亿(+6%).关627+80取餐.利润率11.9%.Rewards改版反弹.NYC#2', threat: 5 },
+  { n: "Dunkin'", s: '13,700', auv: '未披露', move: 'NYC#1.Zero能量饮.OREO联名.Sabrina 127亿曝光.Inspire IPO $200亿', threat: 4 },
+  { n: 'Dutch Bros', s: '1,136', auv: '$210万', move: 'AUV超SBUX.USC Walk-thru=最佳.投资$170→$130万.食物全国推广', threat: 3 },
+  { n: '7 Brew', s: '600+', auv: '$204万', move: '系统销售865%增长.RTD进Walmart.$4604/sqft.大学校园', threat: 3 },
+  { n: 'Blank St.', s: '~95', auv: '未披露', move: '$5亿→$10亿估值.LA Beverly Hills 6月.品牌化Coffee&Matcha', threat: 2 },
+  { n: 'Luckin', s: '10/31048全球', auv: '—', move: 'BB$4亿收购.中国$5万/店93%存活.APP 99%+移动', threat: 0 },
 ];
 
 export const CHINESE_BRANDS = [
-  { n: '喜茶', st: '26-35', p: '$6-9', risk: '高', rc: '#D97706', d: '时代广场TEALAB开业日3500+杯,持续2000+/日', k: 'NYC~15+湾区~7+LA~3' },
-  { n: '霸王茶姬', st: '9', p: '$5-7', risk: '高', rc: '#D97706', d: '2024营收RMB124亿(+167%),利润RMB25.2亿(+213%)', k: 'IPO$4.11亿,聘Emily Chang北美CCO' },
-  { n: '蜜雪冰城', st: '2+', p: '$1.19-3.49', risk: '中', rc: '#3B82F6', d: '2025.12.19好莱坞首店+曼哈顿,排队绕街区', k: '50000+全球最大餐饮,$1.19冲击' },
-  { n: '库迪咖啡', st: '4+', p: '$0.99-2.99', risk: '极高', rc: '#DC2626', d: '前瑞幸高管,18000+店33国,$0.99入门咖啡', k: '最懂瑞幸模式的竞争对手' },
-];
-
-export const STORE_ECON = [
-  { c: 'Starbucks', s: '16,911', rev: '181', inv: '高', fmt: '70%DT+咖啡厅', gr: 'FY25关627家', note: '利润率11.9%.翻新1000店.新店成本降30%.Rewards改版反弹' },
-  { c: 'Dutch Bros', s: '1,136', rev: '210', inv: '$130万(从$170万)', fmt: 'DT+Walk-thru(~900sqft)', gr: '+181/年', note: 'USC Walk-thru=系统最佳.手机位置选址.食物推全国.目标7000店' },
-  { c: '7 Brew', s: '600+', rev: '204/250(公司)', inv: '$60-150万', fmt: '纯DT模块(500-700sqft)', gr: '2年翻倍', note: '系统销售865%增长.RTD进Walmart.$4604+/sqft.大学校园店' },
-  { c: "Scooter's", s: '900+', rev: '88/127(前25%)', inv: '$79-115万', fmt: 'DT+窗口(664sqft)', gr: '+100/年', note: '利润率14.8%/20.5%(前25%).6个配送中心.目标1000店' },
-  { c: 'Blank St.', s: '90-97', rev: '未披露', inv: '<传统1/4', fmt: '350sqft→1300sqft转型', gr: '进LA/费城', note: '$5亿估值→$10亿.14家1月盈利.成本低20%.品牌化Matcha Shop' },
-  { c: '瑞幸(中国)', s: '31,048', rev: '未披露', inv: '~$5万(SBUX 1/15)', fmt: '取餐20-60sqm(99.1%)', gr: '+8708/年', note: '200-250单盈亏.93%存活.外卖验证→开店.RF选址90%准确' },
-];
-
-export const NEW_PRODUCTS = [
-  { b: 'Starbucks', d: '3月3日', items: ['紫薯椰子玛奇朵(ube)', '烤椰子奶油冷萃', '薰衣草Chai(4款回归)', 'Poppi益生元汽水入店'], tag: '亚洲风味+益生元', c: '\u{1F7E2}', insight: '首次将亚洲风味(ube)作为季节主题而非边缘限定' },
-  { b: 'Starbucks', d: '4月7日', items: ['Energy Refreshers永久平台(+$0.80/125mg)', '芒果冷泡沫+芒果糖浆(永久)', '紫薯椰子Shaken Espresso'], tag: '能量+芒果', c: '\u{1F7E2}', insight: '能量+芒果均成永久菜单——战略级品类投入' },
-  { b: 'Starbucks', d: '3月23日', items: ['Coffee & Protein RTD(22g蛋白+5g纤维/$3.99)', 'Khloud/Kardashian 47g蛋白联名'], tag: 'RTD蛋白', c: '\u{1F7E2}', insight: 'SBUX正式进入$54-83亿RTD蛋白咖啡市场' },
-  { b: "Dunkin'", d: '1月7日', items: ['蛋白奶平台(15g/杯)', 'Megan Thee Stallion联名(限量杯秒售罄)'], tag: '蛋白质', c: '\u{1F7E0}', insight: '名人+功能性的成功模板，驱动品类认知' },
-  { b: "Dunkin'", d: '3月4日', items: ['Zero能量饮(6味/145mg/零糖)', '香蕉系列8款(Cloud Latte/Matcha等)'], tag: '能量+香蕉', c: '\u{1F7E0}', insight: '全面进入能量赛道，香蕉成春季突破风味' },
-  { b: "Dunkin'", d: '4月29日', items: ['OREO全联名(Cloud/Coolatta/Matcha)', 'Dirty Soda(百事+咖啡奶+冷泡沫)', 'Cherry Daydream(黑樱桃系列)', 'Arctic Cherry能量饮'], tag: 'OREO+Dirty Soda', c: '\u{1F7E0}', insight: 'Dirty Soda=大型连锁首创汽水咖啡混合新品类' },
-  { b: 'Dutch Bros', d: '1-3月', items: ['棕色黄油巧克力脆片拿铁', '芒果爆炸珠(boba)', '酸糖棒果汁', '水果潘趣+酸candy straw'], tag: '质感+boba', c: '\u{1F535}', insight: 'Blue Rebel能量占24%销售，boba质感创新引领体验' },
-  { b: '7 Brew', d: '3月14日', items: ['RTD 3口味($2.98/罐)', 'Walmart Arkansas首发', '真奶油+100%Arabica'], tag: 'RTD进入', c: '\u{1F7E4}', insight: '系统销售865%增长后首次进入$54-83亿RTD市场' },
-  { b: 'Tim Hortons', d: '1月/4月', items: ['蛋白拿铁(11-23g)', '蛋白Quenchers(14g/4月2日)', 'TimBoost能量饮'], tag: '蛋白+能量', c: '\u{26AA}', insight: '又一连锁同时进入蛋白+能量双品类' },
-  { b: 'Panera', d: '3月11日', items: ['Energy Refreshers(替代争议Charged Lemonade)', 'Frescas果汁系列'], tag: '能量重启', c: '\u{26AA}', insight: '停售争议产品后以新能量饮重新入场' },
-];
-
-export const INDUSTRY_NEWS = [
-  { cat: '供应链', t: '阿拉比卡从$4.41跌至$2.90(-34%)', d: '巴西2026/27预计创纪录66-76百万袋(+17-21%).StoneX预测盈余1000万袋.零售价滞后:$9.37/磅(+33% YoY).', impact: 'pos', s: 'Trading Economics, Rabobank' },
-  { cat: '关税', t: '4月5日起10%通用关税+越南46%', d: '所有进口含咖啡.越南46%威胁Robusta供应链.中国杯/包装35-41.5%.纽约联储:94%关税成本由美国企业/消费者承担.', impact: 'neg', s: 'White House, NY Fed' },
-  { cat: '竞争', t: 'SBUX关627店+DK成NYC第一', d: 'FY25关627家北美(90%+)+80-90纯取餐店.DK超越SBUX成NYC最大.SBUX投$6亿薪酬,Rewards改版引反弹.', impact: 'pos', s: 'SBUX 10-K, QSR' },
-  { cat: '并购', t: 'KDP+JDE $180亿(4月交割)', d: '全球最大纯咖啡公司($160亿咖啡年销售).Keurig/Peets/Jacobs/LOR.年底拆分饮料+咖啡两公司.Royal Cup收购Farmer Brothers.', impact: 'neg', s: 'SEC, Bev Daily' },
-  { cat: '并购', t: 'Blue Bottle $4亿(3月4日)', d: 'Luckin收购BB,Nestle原$7亿.创建独有双品牌.BB保留grocery/RTD portfolio.', impact: 'pos', s: 'Sprudge, World Coffee Portal' },
-  { cat: '功能', t: 'PepsiCo $19.5亿收购Poppi+推Pepsi益生元可乐', d: '功能饮品史上最大退出.Pepsi Prebiotic Cola(3g纤维/30卡).Coca-Cola反击Simply Pop(6g纤维/$2.49).CEO称纤维=下一个蛋白质.', impact: 'pos', s: 'CNBC, Food Dive' },
-  { cat: '劳动力', t: '22州涨最低工资', d: 'DC $17.95,加州$16.90,NYC $17.SBUX门店运营费用升至营收45.9%(从42.3%).', impact: 'neg', s: 'NELP, SBUX Q1' },
-  { cat: '可持续', t: '燕麦奶33%份额,SBUX取消附加费', d: '51%偏好植物奶.燕麦奶$8.6亿.SBUX取消非乳附加费(约50%定制客户降价~10%).', impact: 'pos', s: 'Mordor Intel' },
-];
-
-export const DIGITAL_DATA = {
-  chains: [
-    { n: 'Starbucks', members: '35.5M', mobile: '30%+', loyalty: '~60%收入($130亿+)', ai: 'Deep Brew AI全栈', hl: 'Rewards三级改版引反弹.聘时尚/美妆营销总监(前elf).雇2名全职TikTok内容创作者全球咖啡之旅' },
-    { n: "Dunkin'", members: 'DK Rewards', mobile: '25-30%', loyalty: '~60%', ai: 'Tango Analytics', hl: 'Sabrina 127亿曝光/3240万IG.Affleck第4次超级碗.Megan蛋白限量杯秒售罄' },
-    { n: 'Dutch Bros', members: '1500万', mobile: '11%', loyalty: '73%交易', ai: '手机位置选址', hl: '会员GPS驱动分层选址.食物推全国300→全部.Blue Rebel能量24%销售' },
-    { n: '瑞幸(中国)', members: '9840万MAU', mobile: '99%+', loyalty: '核心', ai: 'APP+RF/XGBoost', hl: '外卖验证→开店.选址90%准确.99%取餐店.中国模式待复制美国' },
-  ],
-  social: {
-    disc: [{ s: '75%', l: 'Z世代社交发现品牌' }, { s: '64%', l: 'TikTok搜索产品' }, { s: '150%', l: 'Z世代咖啡社交对话增长' }],
-    roi: { mkt: '$405亿(2026)', per$: '$5.78', cpm: '$119', eng: '6.15-6.76%' },
-    tiktok: ['Cloud Coffee(椰子水+浓缩)', '紫薯拿铁(ube)', '开心果咖啡(迪拜巧克力延伸)', '蘑菇/适应原咖啡(菜单+4.2x)', '冰咖啡桶(32oz透明桶病毒式传播)'],
-  },
-};
-
-export const ACTIONS = [
-  { id: 1, t: '功能性咖啡产品矩阵', tl: 'Q3 2026', p: '极高', pc: '#DC2626', why: '$518亿市场.蛋白搜索+30.9%.80%美国人优先蛋白.SBUX/DK/Tim Hortons/Panera全部同时发力.',
-    items: [{ a: '蛋白生椰拿铁(15-20g)', pr: '$3.49-3.99', bm: 'SBUX RTD 22g, DK 15g, Tim 23g' }, { a: '能量加强选项(任意饮品)', pr: '+$0.30-0.50', bm: 'SBUX +$0.80, DK Zero独立$2.99' }, { a: '益生元纤维可选', pr: '+$0.30', bm: 'PepsiCo CEO:纤维=下一个蛋白质' }] },
-  { id: 2, t: '冷泡沫+抹茶双平台', tl: 'Q3 2026', p: '高', pc: '#F59E0B', why: '冷泡沫取代糖浆成客制化核心.抹茶菜单+30.2%,Yelp #1.Blank Street品牌化Coffee&Matcha.',
-    items: [{ a: '4+风味冷泡沫平台(生椰/桂花/抹茶/芒果)', pr: '+$0.50-0.80', bm: 'SBUX/DK各推4+种泡沫' }, { a: '抹茶三档:纯$2.5/融合$3/功能$3.99', pr: '$2.50-3.99', bm: 'SBUX $5+' }, { a: '爆炸珠/质感升级($37.7亿boba市场)', pr: '+$0.75-1.25', bm: 'Dutch Bros已推芒果boba' }] },
-  { id: 3, t: 'Blue Bottle双品牌+RTD', tl: '持续', p: '极高', pc: '#DC2626', why: '$4亿收购3/4交割.RTD $54-83亿(SBUX占39%).无中国品牌RTD.',
-    items: [{ a: 'Luckin平价/BB高端互补', pr: '---', bm: '全球独有双品牌' }, { a: 'BB品牌RTD(蛋白+冷萃)', pr: '$4-5/罐', bm: 'SBUX RTD 22g/$3.99, 7Brew$2.98' }, { a: '供应链协同+BB美国门店网络', pr: '成本优化', bm: '规模效应' }] },
-  { id: 4, t: '社交媒体营销体系', tl: '立即', p: '高', pc: '#F59E0B', why: '75% Z世代社交发现.ROI $5.78/$1.DK Sabrina案例127亿曝光.',
-    items: [{ a: 'TikTok隐藏菜单挑战+Cloud Coffee内容', pr: '---', bm: '64% Z世代TikTok搜索' }, { a: '微网红NYC/LA 1-10万', pr: 'CPM$119', bm: 'SBUX雇2名全职TikTok创作者' }, { a: '月度$50-100K预算', pr: '$50-100K', bm: 'DK Sabrina:127亿曝光' }] },
-  { id: 5, t: '门店格式+SBUX空白填充', tl: '中期', p: '中', pc: '#3B82F6', why: 'SBUX关627店+80-90取餐=窗口.Dutch Bros Walk-thru验证.中国$5万/店93%存活.',
-    items: [{ a: '城市:步行350sqft(填SBUX取餐店空白)', pr: '~$5万', bm: 'BS 1月盈利,中国93%,DutchBros Walk-thru最佳' }, { a: '郊区:评估DT窗口', pr: '$60-150万', bm: '7Brew AUV$204万, $4604/sqft' }, { a: 'Placer.ai移动数据选址', pr: '$200-500/月', bm: 'Dutch Bros/Tango已用' }] },
+  { n: '喜茶', st: '26-35', p: '$6-9', risk: '高', rc: '#D97706', d: 'TEALAB旗舰3500+杯/日', k: 'NYC~15+湾区~7+LA~3' },
+  { n: '霸王茶姬', st: '9', p: '$5-7', risk: '高', rc: '#D97706', d: '营收RMB124亿(+167%)', k: 'IPO$4.11亿+Emily Chang CCO' },
+  { n: '蜜雪冰城', st: '2+', p: '$1.19-3.49', risk: '中', rc: '#3B82F6', d: '50000+全球最大餐饮', k: '$1.19冰淇淋冲击' },
+  { n: '库迪咖啡', st: '4+', p: '$0.99-2.99', risk: '极高', rc: '#DC2626', d: '前瑞幸高管,18000+/33国', k: '$0.99入门咖啡' },
 ];
 
 export const TIMELINE = [
-  { d: '4月下旬', evs: ['DK 4/29 OREO+Dirty Soda+Cherry', 'SBUX Energy Refreshers首月数据', 'KDP-JDE整合启动'] },
-  { d: '5月', evs: ['SBUX FQ2财报(关店+利润率趋势)', '咖啡商品价格(巴西产季)', 'Inspire/DK IPO进展'] },
-  { d: '6月', evs: ['Blank Street LA Beverly Hills开业', '各品牌夏季菜单', '霸王茶姬美国扩张(IPO后)'] },
-  { d: '持续', evs: ['10%关税影响评估', 'SBUX关店地图(填空机会)', '库迪/蜜雪美国进展'] },
+  { d: '4月下旬', evs: ['DK 4/29 OREO+Dirty Soda+Cherry上市效果', 'SBUX Energy Refreshers首月数据'] },
+  { d: '5月', evs: ['SBUX FQ2财报(关店+利润率)', '咖啡商品价格(巴西产季)', 'Inspire/DK IPO进展'] },
+  { d: '6月', evs: ['Blank Street LA Beverly Hills', '各品牌夏季菜单', '霸王茶姬扩张'] },
+  { d: '持续', evs: ['10%关税影响', 'SBUX关店地图(填空)', '库迪/蜜雪进展'] },
 ];
 
 export const LUCKIN_SWOT = {
-  str: ['极致价格($2-3 vs $4-7)', 'APP 99%+移动下单(中国验证)', 'Blue Bottle双品牌(3/4交割)', '亚洲风味供应链(ube/椰子/桂花)', '全球31048家规模效应', '$5万/店93%存活中国模式', 'SBUX关627店+80-90取餐=窗口', 'Z世代对亚洲品牌天然好奇'],
-  chg: ['美国仅10店,规模极有限', '步行式vs得来速59%主流', '10%通用关税+中国杯35-41.5%', '品牌知名度低(非华人市场)', '蜜雪$1.19+库迪$0.99直接竞争', 'SBUX转型复苏(Q1+4%)', '劳动力高(NYC $17+,SBUX 45.9%)', 'DK已成NYC第一,份额压力'],
+  str: ['极致价格($2-3 vs $4-7)', 'APP 99%+移动(中国验证)', 'Blue Bottle双品牌(3/4交割,$4亿)', '亚洲风味供应链', '全球31048家规模', '$5万/店93%存活模式', 'SBUX关627店=窗口', 'Z世代对亚洲品牌好奇'],
+  chg: ['美国仅10店', '步行vs得来速59%主流', '10%关税+中国杯35-41.5%', '品牌知名度低', '蜜雪$1.19+库迪$0.99竞争', 'SBUX复苏(Q1+4%)', '劳动力高(NYC $17+)', 'DK已成NYC第一'],
 };
 
 export const SOURCES = [
-  'NCA 2025', 'Starbucks 10-K/IR/Q1 FY26', "Dunkin' Newsroom/Inspire",
-  'Dutch Bros 10-K', '7 Brew/Business Wire', 'Blank Street/FT/Consumer Edge',
-  'Placer.ai', 'IBISWorld', 'Mordor Intelligence', 'Precedence Research',
-  'Tastewise', 'Spate', 'Innova Market Insights', 'Trading Economics',
-  'SEC EDGAR', 'Bloomberg', 'Reuters', 'CNBC', 'Food Dive',
-  'QSR Magazine', 'Franchise Times', 'KrASIA', 'Semafor', 'Sprudge',
-  'White House (tariff orders)', 'NY Fed', 'NELP (min wage)',
+  'NCA 2025', 'Starbucks 10-K/IR/Q1 FY26', "Dunkin' Newsroom",
+  'Dutch Bros 10-K', '7 Brew/Business Wire', 'Blank Street/FT',
+  'Placer.ai', 'Precedence Research', 'Tastewise', 'Spate',
+  'Trading Economics', 'SEC EDGAR', 'CNBC', 'Food Dive',
+  'QSR Magazine', 'Franchise Times', 'KrASIA', 'Semafor',
 ];
